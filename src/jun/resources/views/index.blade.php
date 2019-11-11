@@ -60,7 +60,8 @@ top.css
         <section>
           <h1 class="text-center">指定して検索</h1>
 
-          <form action="result/index.php" method="get">
+          <form action="/result/" method="get">
+          {{ csrf_field() }}
             <!-- //textbox -->
             <div class="row pt-5">
               <div class="col">
@@ -77,7 +78,9 @@ top.css
               </div>
               <div class="col-md-4">
                 <div class="text-left">
-                  <?php //checkbox_create(); ?>
+                    @foreach($checkboxes as $checkbox)
+                    <input type="checkbox" name="checkbox_arr[]" value="{{$checkbox->name}}"><lable>{{$checkbox->name}}<image src="{{$checkbox->icon_path}}"></label>
+                    @endforeach
                 </div>
               </div>
               <div class="col-md-4">

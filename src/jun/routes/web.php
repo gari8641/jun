@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'JunController@index');
+Route::get('/result/', 'JunController@result');

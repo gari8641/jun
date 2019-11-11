@@ -9,7 +9,14 @@ class JunController extends Controller
 {
   function index()
   {
+    $checkbox_arr = DB::select('select name, icon_path from checkboxes WHERE enable = 1');
+    return view('index', ['checkboxes' => $checkbox_arr]);
+  }
 
-    return view('index');
+  function result(Request $request)
+  {
+    $checkbox_arr = $request->input('checkbox_arr');
+
+    return view('/result/index', ['checkboxes' => $checkbox_arr]);
   }
 }
