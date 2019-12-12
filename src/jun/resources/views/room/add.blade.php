@@ -1,12 +1,11 @@
 @extends('layouts.common')
-    <?php //require_once($_SERVER['DOCUMENT_ROOT'] . '/../functions/top-func.php'); ?>
-    <?php //require_once($_SERVER['DOCUMENT_ROOT'] . '/common/inc/head.php'); ?>
+
 @section('cssfile')
-top.css
+room-add.css
 @endsection
 
 @section('title')
-  トップページ
+  授乳室情報追加
 @endsection
 
 @section('content')
@@ -37,23 +36,19 @@ top.css
     <div class="col-md-8">
       <article>
         <section>
-          <h1 class="h1 text-center mb-2">現在地周辺</h1>
+          <h1 class="h1 text-center mb-2">授乳室情報追加</h1>
 
           <div class="container py-5">
+<div>
+  <form action="#" onsubmit="getLatLng(document.getElementById('address').value); return(false);">
+{{ csrf_field() }}
+住所 or ランドマーク：<input type='text' id='address' style='width: 400px' value=""> <input type='submit' value='検索'>
+</form>
+</div>
             <!-- 地図 -->
             <div id="maps">
             </div>
             <!--// 地図 -->
-
-            <!--
-            <div class="row py-4">
-              <div class="col py-3">
-                <div class="text-center">
-                  <a href="" class="btn btn-primary btn-lg">現在地の近くを検索</a>
-                </div>
-              </div>
-            </div>
-            -->
           </div>
         </section>
 
@@ -73,29 +68,19 @@ top.css
             <!-- textbox// -->
 
             <!-- check box -->
-            <div class="row py-4 text-left">
-            <ul class="bg_checkbox">
-                <!-- <div class="text-left"> -->
-
-                @foreach($checkboxes as $checkbox)
-                  @if($loop->iteration % 4 == 1 && $loop->iteration <> 1)
-                    <div class="row py-4 text-left">
-                      <ul class="bg_checkbox">
-                  @endif
-                    <!-- <div class="col-md-3"> -->
-                      <li>
-                      <!-- <input type="checkbox" name="checkbox_arr[]" value="{{$checkbox->name}}"><lable>{{$checkbox->name}}<image src="{{$checkbox->icon_path}}"></label> -->
-                      <input type="checkbox" name="checkbox_arr[]" value="{{$checkbox->name}}"><lable>{{$checkbox->name}}</label>
-                        </li>
-                      
-                    <!-- </div> -->
-                  @if($loop->iteration % 4 == 0 || $loop->last)
-      </ul>
-                    </div>
-                  @endif
-                @endforeach
-
-
+            <div class="row py-4">
+              <div class="col-md-4">
+              </div>
+              <div class="col-md-4">
+                <div class="text-left">
+                    @foreach($checkboxes ?? '' ?? '' as $checkbox)
+                    <input type="checkbox" name="checkbox_arr[]" value="{{$checkbox->name}}"><lable>{{$checkbox->name}}<image src="{{$checkbox->icon_path}}"></label>
+                    @endforeach
+                </div>
+              </div>
+              <div class="col-md-4">
+              </div>
+            </div>
             <!-- check box //-->
 
             <!-- //検索ボタン -->

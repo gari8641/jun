@@ -44,13 +44,12 @@ result.css
             <!--// 地図 -->
           </div>
 
-          <form action="result/index.php" method="get">
-          {{ csrf_field() }}
-            <!-- //textbox -->
             <div class="row pt-5">
               <div class="col">
                 <div class="py-2">
-{{ print_r($checkboxes) }}
+@foreach($checkboxes as $checkbox)
+  {{$checkbox->getNameIconpath()}} 
+@endforeach
 
 写真  
 住所  
@@ -61,8 +60,6 @@ result.css
                 </div>
               </div>
             </div>
-            <!-- textbox// -->
-          </form>
         </section>
       </article>
     </div>

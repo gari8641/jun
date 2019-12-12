@@ -37,8 +37,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <!-- google map -->
-    <!-- <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDFjBO45AsEAQUZvU04RdJ7GilfMjUbEjE&callback=initMap" async></script> -->
+    <!--<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDFjBO45AsEAQUZvU04RdJ7GilfMjUbEjE&callback=initMap" async></script>-->
     <script src="//maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDFjBO45AsEAQUZvU04RdJ7GilfMjUbEjE&callback=initMap"></script>
+    <script type="text/javascript" src="/js/googlemap-address-search.js"></script>
     <script type="text/javascript" src="js/googlemap-mark.js"></script>
 </body>
 </html>
