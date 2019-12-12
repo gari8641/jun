@@ -72,32 +72,6 @@ top.css
             </div>
             <!-- textbox// -->
 
-            <!-- check box -->
-            <div class="row py-4 text-left">
-            <ul class="bg_checkbox">
-                <!-- <div class="text-left"> -->
-
-                @foreach($checkboxes as $checkbox)
-                  @if($loop->iteration % 4 == 1 && $loop->iteration <> 1)
-                    <div class="row py-4 text-left">
-                      <ul class="bg_checkbox">
-                  @endif
-                    <!-- <div class="col-md-3"> -->
-                      <li>
-                      <!-- <input type="checkbox" name="checkbox_arr[]" value="{{$checkbox->name}}"><lable>{{$checkbox->name}}<image src="{{$checkbox->icon_path}}"></label> -->
-                      <input type="checkbox" name="checkbox_arr[]" value="{{$checkbox->name}}"><lable>{{$checkbox->name}}</label>
-                        </li>
-                      
-                    <!-- </div> -->
-                  @if($loop->iteration % 4 == 0 || $loop->last)
-      </ul>
-                    </div>
-                  @endif
-                @endforeach
-
-
-            <!-- check box //-->
-
             <!-- //検索ボタン -->
             <div class="row py-2">
               <div class="col">
