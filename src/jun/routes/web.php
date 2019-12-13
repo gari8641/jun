@@ -25,15 +25,13 @@ echo <<<EOD
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <title>位置情報取得サンプル2</title>
-
-  <!-- 動作処理 -->
-  <script>
-    // 現在地取得処理
-    function initMap() {
-      // Geolocation APIに対応している
-navigator.geolocation.getCurrentPosition();
+<meta charset="utf-8">
+<title>位置情報取得サンプル2</title>
+<!-- 動作処理 -->
+<script>
+// 現在地取得処理
+function initMap() {
+// Geolocation APIに対応している navigator.geolocation.getCurrentPosition();
       if (navigator.geolocation) {
         // 現在地を取得
         navigator.geolocation.getCurrentPosition(
